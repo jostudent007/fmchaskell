@@ -42,3 +42,9 @@ div (a, b)
   | a < b     = (O, a)
   | otherwise = let (q', r') = div (a - b, b)
                  in (S q', r')
+
+
+leq :: Nat -> Nat -> Bool
+leq O _ = True
+leq _ O = False
+leq (S m) (S n) = leq m n
